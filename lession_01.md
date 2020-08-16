@@ -33,7 +33,8 @@ tikv:
 ```
 tidb:
 ```
-./tidb-server -P 4000
+./bin/tidb-server --store=tikv \
+                  --path="127.0.0.1:2379"
 ```
 6. 登录 tidb
  mysql -h 127.0.0.1 -P 4000 -u root
@@ -51,4 +52,26 @@ select * from t;
 +------+
  
 ```
+
+8. 学习 tidb 源码
+[TiKV 源码解析系列文章（十二）分布式事务](https://pingcap.com/blog-cn/tikv-source-code-reading-12/)
+[TiDB 最佳实践系列（三）乐观锁事务](https://pingcap.com/blog-cn/best-practice-optimistic-transaction/)
+[TiKV 事务模型概览，Google Spanner 开源实现](https://pingcap.com/blog-cn/tidb-transaction-model/)
+[TiDB 源码阅读系列文章（三）SQL 的一生](https://pingcap.com/blog-cn/tidb-source-code-reading-3/)
+
+9. 分析tidb 源代码内容
+kv.go StartTS // 事务定义interface，
+tikv/txn.go StartTS// tikv 事务实现 从 pd 读取时间
+kv/txn.go RunInNewTxn // 新事务环境执行器。
+
+10. 修改代码
+tikv/kv.go Begin // 事务开始实现
+添加代码  
+	logutil.BgLogger().Info("hello transaction")
+11. 编译 make
+12. 执行，启动一直打印 
+```
+[2020/08/16 17:15:11.483 +00:00] [INFO] [kv.go:286] ["hello transaction"]
+```
+
 
