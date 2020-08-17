@@ -77,7 +77,7 @@ func (e *SimpleExec) executeRollback(s *ast.RollbackStmt) error  负责事务回
 在 simple.go: executeBegin 方法中添加日志语句  
 	logutil.BgLogger().Info("hello transaction")  
 11. 编译 make  
-12. 执行，启动一直打印   
+12. 执行 begin语句
 ```
 [2020/08/17 05:09:43.701 +00:00] [INFO] [session.go:1502] ["NewTxn() inside a transaction auto commit"] [conn=1] [schemaVersion=24] [txnStartTS=418811902470651904]
 [2020/08/17 05:09:43.702 +00:00] [INFO] [simple.go:584] ["hello transaction"]
