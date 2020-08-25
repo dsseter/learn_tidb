@@ -1,11 +1,16 @@
 # 启动 pd
-~/tidb/pd/bin/pd-server -config ~/tidb/config/pd_config.toml
+nohup ~/tidb/pd/bin/pd-server -config ~/tidb/config/pd_config.toml &
+tail -f ~/tidb/logs/pd/log.log
 # tikv
-~/tidb/tikv/target/release/tikv-server --config ~/tidb/config/tikv_config_20161.toml
-~/tidb/tikv/target/release/tikv-server --config ~/tidb/config/tikv_config_20162.toml
-~/tidb/tikv/target/release/tikv-server --config ~/tidb/config/tikv_config_20163.toml
+nohup ~/tidb/tikv/target/release/tikv-server --config ~/tidb/config/tikv_config_20161.toml &
+tail -f ~/tidb/logs/tikv/20161.log
+nohup ~/tidb/tikv/target/release/tikv-server --config ~/tidb/config/tikv_config_20162.toml &
+tail -f ~/tidb/logs/tikv/20162.log
+nohup ~/tidb/tikv/target/release/tikv-server --config ~/tidb/config/tikv_config_20163.toml &
+tail -f ~/tidb/logs/tikv/20163.log
  # tidb
-~/tidb/tidb/bin/tidb-server --config ~/tidb/config/tidb_config.toml
+nohup ~/tidb/tidb/bin/tidb-server --config ~/tidb/config/tidb_config.toml &
+tail -f ~/tidb/logs/tidb/tidb.log
 
  ~/tidb/bin/prometheus-2.20.1.linux-386/prometheus  --config.file ~/tidb/config/prometheus.yml \
     --web.listen-address=":9090" \
