@@ -19,3 +19,10 @@ tail -f ~/tidb/logs/tidb/tidb.log
     --log.level="info" \
     --storage.tsdb.path="/home/dsseter/tidb/data/prometheus" \
     --storage.tsdb.retention="15d"
+
+# sysbench
+sysbench --config-file=/home/dsseter/tidb/config/sysbench_config.conf oltp_point_select --threads=20 --tables=32 --table-size=10000 prepare
+
+
+# kill tidb 
+ps -ef |grep tidb |grep -v  tail  |grep -v ps |grep -v grep | awk '{print $2}' |xargs kill -9
