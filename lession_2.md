@@ -27,7 +27,7 @@ http://192.168.199.123:10080/
 
 3. TiDB Dashboard  
 http://192.168.199.123:2379/dashboard/#/overview  
-
+![image](https://github.com/dsseter/learn_tidb/raw/master/images/dashboard.png)
 4. 创建数据库  
 ```
 $ create database benchmark;
