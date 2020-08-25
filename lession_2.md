@@ -12,7 +12,7 @@ CPU: Intel(R) Xeon(R) CPU E5-2678 v3 @ 2.50GHz, 24核
 Memory: DDR4 32GB  
 磁盘： 512GB nvme SSD   
 实例： * 1  
-PD * 1 & TiKV * 3 & TiDB * 1, 单机部署  
+拓扑：PD * 1 & TiKV * 3 & TiDB * 1, 单机部署  
 
 1. 启动服务  
 ```
