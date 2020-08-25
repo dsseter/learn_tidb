@@ -13,7 +13,7 @@ tikv: https://github.com/tikv/tikv
 tidb: https://github.com/pingcap/tidb  
 4. 编译代码
 pd: make -j 20  
-tidb: make -j 20  
+tidb: make
 tikv: make release -j 20  
 
 5. 部署 pd:1, tidb:1 tikv:2集群  
