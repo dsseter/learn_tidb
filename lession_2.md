@@ -7,12 +7,12 @@
 
 ## 课程 2
 #### PS: 服务拓扑未使用 TiUP部署，采用的是手动部署方案， 故 DashBoard 的监控数据中没有 QPS等信息。 
-机器配置 & 部署
-CPU: Intel(R) Xeon(R) CPU E5-2678 v3 @ 2.50GHz, 24核
-Memory: DDR4 32GB
-磁盘： 512GB nvme SSD 
-实例： * 1
-PD * 1 & TiKV * 3 & TiDB * 1, 单机部署
+机器配置 & 部署  
+CPU: Intel(R) Xeon(R) CPU E5-2678 v3 @ 2.50GHz, 24核  
+Memory: DDR4 32GB  
+磁盘： 512GB nvme SSD   
+实例： * 1  
+PD * 1 & TiKV * 3 & TiDB * 1, 单机部署  
 
 1. 启动服务  
 ```
